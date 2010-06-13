@@ -58,7 +58,7 @@ $tables = array(
 	/* content types group members can create for their group */
 	'groups_content_types' => "
 		group_content_id I4 PRIMARY,
-		content_type_guid C(16) PRIMARY
+		content_type_guid C(32) PRIMARY
 		CONSTRAINT ', CONSTRAINT `groups_content_types_gp_c_id` FOREIGN KEY (`group_content_id`) REFERENCES `".BIT_DB_PREFIX."liberty_content` (`content_id`)
 					, CONSTRAINT `groups_content_types_type_guid` FOREIGN KEY (`content_type_guid`) REFERENCES `".BIT_DB_PREFIX."liberty_content_types` (`content_type_guid`)'
 	",
@@ -141,11 +141,11 @@ $gBitInstaller->registerPreferences( GROUP_PKG_NAME, array(
 
 // Package Requirements
 $gBitInstaller->registerRequirements( GROUP_PKG_NAME, array(
-	'liberty'       => array( 'min' => '2.1.4' ),
+	'liberty'       => array( 'min' => '2.1.5' ),
 	'boards'        => array( 'min' => '0.0.0' ),
 	'moderation'    => array( 'min' => '0.0.0' ),
 	'modcomments'   => array( 'min' => '0.0.0' ),
-	'libertysecure' => array( 'min' => '0.0.0' ),
+	'libertysecure' => array( 'min' => '1.0.0' ),
 	'switchboard'   => array( 'min' => '0.0.0' ),
 ));
 ?>
