@@ -279,7 +279,7 @@ if( !empty( $_REQUEST["save_group"] ) || !empty( $_REQUEST["save_group_continue"
  * we ask for a fresh list since it might have changed
  */
 $formGroupContent['checked'] = $gContent->getContentTypePrefs();
-if( !$gContent->isValid() ){
+if( !$gContent->isValid() && !empty( $formGroupContent['guids'] ) ){
 	// if content is new our prefs will be nearly empty, so we fill them with all options, the form thus becomes opt out
 	$formGroupContent['checked'] = array_merge( $formGroupContent['checked'], array_keys( $formGroupContent['guids'] ) );
 }
