@@ -17,7 +17,7 @@ array( 'DATADICT' => array(
 	// insert new column
 	array( 'ALTER' => array(
 		'groups_content_types' => array(
-			'content_type_guid' => array( '`content_type_guid`', 'VARCHAR(32)' ),
+			'content_type_guid' => array( '`content_type_guid`', 'TYPE VARCHAR(32)' ),
 		),
 	)),
 )),
