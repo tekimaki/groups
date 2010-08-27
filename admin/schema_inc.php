@@ -1,4 +1,27 @@
 <?php
+
+global $gBitSystem;
+
+$gBitSystem->registerPackageInfo( GROUP_PKG_NAME, array(
+	'description' => "The Group package allows users to create groups to organize content.",
+	'license' => '<a href="http://www.gnu.org/licenses/licenses.html#LGPL">LGPL</a>',
+) );
+
+// Package Requirements
+$gBitSystem->registerRequirements( GROUP_PKG_NAME, array(
+	'liberty'       => array( 'min' => '2.1.5' ),
+	'boards'        => array( 'min' => '0.0.0' ),
+	'moderation'    => array( 'min' => '0.0.0' ),
+	'modcomments'   => array( 'min' => '0.0.0' ),
+	'libertysecure' => array( 'min' => '1.0.0' ),
+	'switchboard'   => array( 'min' => '0.0.0' ),
+));
+
+
+// Install process
+global $gBitInstaller;
+if( is_object( $gBitInstaller ) ){
+
 $tables = array(
 	'groups' => "
 		group_id I4 PRIMARY,
@@ -78,11 +101,6 @@ foreach( array_keys( $tables ) AS $tableName ) {
 	$gBitInstaller->registerSchemaTable( GROUP_PKG_NAME, $tableName, $tables[$tableName] );
 }
 
-$gBitInstaller->registerPackageInfo( GROUP_PKG_NAME, array(
-	'description' => "The Group package allows users to create groups to organize content.",
-	'license' => '<a href="http://www.gnu.org/licenses/licenses.html#LGPL">LGPL</a>',
-) );
-
 // ### Indexes
 $indices = array(
 	'groups_group_id_idx'            => array( 'table' => 'groups', 'cols'                 => 'group_id', 'opts'         => NULL ),
@@ -139,13 +157,4 @@ $gBitInstaller->registerPreferences( GROUP_PKG_NAME, array(
 	array( GROUP_PKG_NAME, 'group_list_groups', 'y' ),
 ) );
 
-// Package Requirements
-$gBitInstaller->registerRequirements( GROUP_PKG_NAME, array(
-	'liberty'       => array( 'min' => '2.1.5' ),
-	'boards'        => array( 'min' => '0.0.0' ),
-	'moderation'    => array( 'min' => '0.0.0' ),
-	'modcomments'   => array( 'min' => '0.0.0' ),
-	'libertysecure' => array( 'min' => '1.0.0' ),
-	'switchboard'   => array( 'min' => '0.0.0' ),
-));
-?>
+}
