@@ -9,9 +9,9 @@ $gBitSystem->registerPackageInfo( GROUP_PKG_NAME, array(
 
 // Package Requirements
 $gBitSystem->registerRequirements( GROUP_PKG_NAME, array(
-	'liberty'       => array( 'min' => '2.1.5' ),
+	'liberty'       => array( 'min' => '2.1.6' ),
 	'boards'        => array( 'min' => '0.0.0' ),
-	'moderation'    => array( 'min' => '0.0.0' ),
+	'moderation'    => array( 'min' => '0.0.1' ),
 	'modcomments'   => array( 'min' => '0.0.0' ),
 	'libertysecure' => array( 'min' => '1.0.0' ),
 	'switchboard'   => array( 'min' => '0.0.0' ),
@@ -41,7 +41,7 @@ $tables = array(
 	",
 
 	'groups_permissions' => "
-		perm_name C(30) PRIMARY,
+		perm_name C(128) PRIMARY,
 		perm_desc C(250)
 	",
 
@@ -49,7 +49,7 @@ $tables = array(
 	'groups_roles_perms_map' => "
 		group_id I4 NOTNULL,
 		group_content_id I4 NOTNULL,
-		perm_name C(30) NOTNULL,
+		perm_name C(128) NOTNULL,
 		role_id I4 NOTNULL
 		CONSTRAINT ', CONSTRAINT `groups_roles_p_map_gp_c_id` FOREIGN KEY (`group_content_id`) REFERENCES `".BIT_DB_PREFIX."liberty_content` (`content_id`)
 					, CONSTRAINT `groups_roles_p_map_role_id` FOREIGN KEY (`role_id`) REFERENCES `".BIT_DB_PREFIX."groups_roles` (`role_id`)
