@@ -17,6 +17,8 @@ if ( is_file( BIT_ROOT_PATH.'moderation/bit_setup_inc.php' ) ){
 	require_once( BIT_ROOT_PATH.'moderation/bit_setup_inc.php' );
 }
 
+global $gBitSystem;
+
 if( $gBitSystem->isPackageActive('moderation') &&
 	!defined('groups_moderation_callback') ) {
 	global $gModerationSystem;
