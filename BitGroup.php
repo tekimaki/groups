@@ -1432,7 +1432,11 @@ function group_content_preview( &$pObject) {
 function group_content_edit( &$pObject, &$pParamHash ) {
 	global $gBitSystem, $gBitSmarty, $gBitUser;
 	$errors = NULL;
-	if( $gBitSystem->isPackageActive( 'group' ) && $pObject->getContentType() != BITGROUP_CONTENT_TYPE_GUID ){
+	if( $gBitSystem->isPackageActive( 'group' ) && 
+		$pObject->getContentType() != BITGROUP_CONTENT_TYPE_GUID &&
+		// exception for users trying to register
+		( $pObject->getContentType() != BITUSER_CONTENT_TYPE_GUID || ($pObject->getContentType() == BITUSER_CONTENT_TYPE_GUID && $pObject->isRegistered() ) )
+	){
 		$connect_group_content_id = NULL;
 
 		// when creating new content via a group we pass the group content id to the edit form
