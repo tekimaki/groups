@@ -19,6 +19,7 @@ if( $gBitSystem->isPackageActive( 'group' ) ) {
 	);
 	$gBitSystem->registerAppMenu( $menuHash );
 
+	/*
 	$gLibertySystem->registerService( LIBERTY_SERVICE_GROUP, GROUP_PKG_NAME, array(
 		'module_display_function'		=> 'group_module_display',
 		'content_edit_mini_tpl'			=> 'bitpackage:group/edit_group_mini_inc.tpl',
@@ -36,6 +37,7 @@ if( $gBitSystem->isPackageActive( 'group' ) ) {
 		'content_user_perms_function'	=> 'group_content_user_perms',
 		'comment_store_function'		=> 'group_comment_store'
 	) );
+	*/
 
 	/**
 	 * load up switchboard.
