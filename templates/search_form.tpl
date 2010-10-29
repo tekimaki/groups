@@ -21,7 +21,7 @@
 
 		{include file="bitpackage:liberty/services_inc.tpl" serviceLocation='search'}
 
-		<div class="row submit">
+		<div class="buttonHolder row submit">
 			{* requires gmap and geo packages - we send search request to gmap to display results on a map *}
 			{if $listInfo && $gBitSystem->isPackageActive( 'gmap' ) }
 				<div style="float:right">

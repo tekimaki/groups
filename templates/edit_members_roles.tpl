@@ -43,7 +43,7 @@
 						{/foreach}
 					</table>
 				</div>
-				<div class="row submit">
+				<div class="buttonHolder row submit">
 					<input type="submit" name="save_roles" value="{tr}Save{/tr}" />
 				</div>
 			{/legend}

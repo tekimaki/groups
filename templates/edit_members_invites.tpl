@@ -26,7 +26,7 @@
 						{formhelp note="You can customize your invitation by adding a message. Groups will automatically include the group name, description, and link in the email."}
 					{/forminput}
 				</div>
-				<div class="row submit">
+				<div class="buttonHolder row submit">
 					<input type="submit" name="send_invite" value="{tr}Invite Members{/tr}" />
 				</div>
 			{/form}

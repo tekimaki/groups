@@ -86,7 +86,7 @@
 							</tbody>
 						</table>
 
-						<div class="row submit">
+						<div class="buttonHolder row submit">
 							<input type="submit" name="submitcolumns" value="{tr}Change columns settings{/tr}" />
 						</div>
 
@@ -136,7 +136,7 @@
 								</tbody>
 							</table>
 
-							<div class="row submit">
+							<div class="buttonHolder row submit">
 								<input type="submit" name="changecenter" value="{tr}Change center settings{/tr}" />
 							</div>
 						{/form}
@@ -190,7 +190,7 @@
 					{formhelp note="Here you can enter any additional parameters the module might need. (optional)"}
 				{/forminput}
 			</div>
-						<div class="row submit">
+						<div class="buttonHolder row submit">
 							<input type="submit" name="submitcenter" value="{tr}Assign center module{/tr}" />
 						</div>
 					{/form}

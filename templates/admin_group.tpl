@@ -74,7 +74,7 @@
 			{/legend}
 		{/jstab}
 	{/jstabs}
-	<div class="row submit">
+	<div class="buttonHolder row submit">
 		<input type="submit" name="group_preferences" value="{tr}Change Preferences{/tr}" />
 	</div>
 {/form}

@@ -58,7 +58,7 @@
 							{/forminput}
 						</div>
 						{textarea name="email_body" label="Email Body"}{/textarea}
-						<div class="row submit">
+						<div class="buttonHolder row submit">
 							<input type="submit" name="send_email" value="{tr}Send{/tr}" />
 						</div>
 				{/form}
